@@ -1,7 +1,9 @@
 name: Build Repo Listing
 
-on: 
+on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [package-released]
   push:
     branches: main
     paths: source.json
@@ -46,8 +48,11 @@ jobs:
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
           
+      # --package-listing-source-folder and --verbosity are passed explicitly:
+      # tsvrc-core's version of this workflow silently did nothing until both were
+      # added, rather than relying on the tool's own default resolution.
       - name: Build Package Version Listing
-        run: ${{env.pathToCi}}/build.cmd BuildMultiPackageListing --root ${{env.pathToCi}} --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}}
+        run: ${{env.pathToCi}}/build.cmd BuildMultiPackageListing --root ${{env.pathToCi}} --package-listing-source-folder $GITHUB_WORKSPACE --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}} --verbosity Verbose
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  
