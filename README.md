@@ -25,4 +25,4 @@ template. Old versions stay listed, so projects that depend on them keep working
 
 ## License
 
-Apache-2.0, see [LICENSE](LICENSE).
+Apache-2.0, see [LICENSE](LICENSE) and [NOTICE](NOTICE).

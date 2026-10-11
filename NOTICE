@@ -1,0 +1,6 @@
+TsVRC VPM listing
+Copyright 2026 Antony Seas
+
+Website/index.html, Website/app.js and Website/styles.css are copied unchanged from the VRChat
+template-package-listing repository (https://github.com/vrchat-community/template-package-listing),
+and .github/workflows/build-listing.yml is adapted from it.
