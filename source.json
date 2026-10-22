@@ -13,5 +13,5 @@
     "text": "View on GitHub"
   },
   "bannerUrl": "banner.png",
-  "githubRepos": ["tsvrc/tsvrc-core", "tsvrc/udon-test-kit"]
+  "githubRepos": ["tsvrc/udon-test-kit"]
 }
